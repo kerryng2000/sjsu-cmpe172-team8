@@ -25,8 +25,6 @@ router.route('/add').post((req, res) => {
   .catch(err => res.status(400).json('Error: ' + err));
 });
 
-//testing
-
 router.route('/:id').get((req, res) => {
   ParkingSpace.findById(req.params.id)
     .then(ParkingSpace => res.json(ParkingSpace))
