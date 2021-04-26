@@ -5,7 +5,8 @@
 - Project Introduction (what the application does)
 - 
 - Sample Demo Screenshots
-- 
+- ![image](https://user-images.githubusercontent.com/33183687/116125434-565ba680-a67a-11eb-914b-8e9cea73e703.png)
+
 - Folder structure as above
 - 
 - Instructions on how to run the project locally.
