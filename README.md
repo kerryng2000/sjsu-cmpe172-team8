@@ -3,7 +3,7 @@
 - Course: Enterprise Software - CMPE172/ Spring 2021
 - Team Members - Kerry Ng, Phoebe Fung, Duy Dee
 - Project Introduction (what the application does)
-- 
+- In college, many people commute to school, especially universities such as San Jose State University. Many will commute to the campus and find out that there isn’t a parking spot for their car and waste time and gas to drive around the campus looking for a spot. Some would choose to go to the university parking lot, however, those are also full too during times where there are many classes in session. Our application aims to solve this problem, where users are able to sell their spots to other students. Users can list their parking spot available and when it’s bought, the other user can take the spot without the stress of looking for another spot.
 - Sample Demo Screenshots
 - Creating Users
 - ![image](https://user-images.githubusercontent.com/33183687/116125434-565ba680-a67a-11eb-914b-8e9cea73e703.png)
