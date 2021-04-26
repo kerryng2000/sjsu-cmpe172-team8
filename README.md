@@ -18,7 +18,7 @@
 - ![image](https://user-images.githubusercontent.com/33183687/116125747-bce0c480-a67a-11eb-8a37-1b3b44809574.png)
 
 - Folder structure as above
-
+![image](https://user-images.githubusercontent.com/33183687/116127660-f3b7da00-a67c-11eb-8ab5-f118e5dd924c.png)
 
 - Instructions on how to run the project locally.
 - To run the app, first cd to my-react-app. Enter command npm install. In a second terminal cd to my-react-app and then cd to backend, then enter the command npm install. Once the packages have finish installation, in the first terminal cd to src, then enter the command npm start and in the backend/2nd terminal also enter npm start. This will open up a browser which will display our application.
