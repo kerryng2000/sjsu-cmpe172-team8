@@ -22,9 +22,15 @@ export default class ParkingSpacesList extends Component {
 
     this.state = {ParkingSpaces: []};
   }
+  state = { search: '' };
+  onSubmit = e => {
+    e.preventDefault();
+    this.context.router.push(`/ParkingSpace/search/${this.state.search}`);
+  };
+  onChange = e => this.setState({ search: e.target.value });
 
   componentDidMount() {
-    axios.get('http://localhost:5000/ParkingSpace/search')
+    axios.get('http://localhost:5000/ParkingSpace/')
       .then(response => {
         this.setState({ ParkingSpaces: response.data })
       })
@@ -52,11 +58,10 @@ export default class ParkingSpacesList extends Component {
     return (
       <div>
           <h3>TESTING</h3>
-    <form action="/ParkingSpace/search" method="GET" class="boarder">
-    <h3>Search by Duration</h3>
-      <input type="number" name="duration" placeholder="Duration" />
-      <button type="submit">Submit</button>
-    </form>
+          <form onSubmit={this.onSubmit}>
+        <input onChange={this.onChange} value={this.state.search} />
+        <button type="submit">Search Parking Spots</button>
+      </form>
         <h3>Logged Parking Spaces</h3>
         <table className="table">
           <thead className="thead-light">

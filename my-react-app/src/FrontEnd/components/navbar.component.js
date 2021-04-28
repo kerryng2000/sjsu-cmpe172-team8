@@ -5,10 +5,8 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+      <nav className="navbar navbar-light bg-light">
         <Link to="/" className="navbar-brand">The Parking Space Tracker</Link>
-        <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
           <Link to="/" className="nav-link">Parking Spaces</Link>
           </li>
@@ -21,8 +19,6 @@ export default class Navbar extends Component {
           <li className="navbar-item">
           <Link to="/search" className="nav-link">Search by Duration</Link>
           </li>
-        </ul>
-        </div>
       </nav>
     );
   }
