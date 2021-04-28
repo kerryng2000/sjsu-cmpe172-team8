@@ -6,7 +6,8 @@ const ParkingSpace = props => (
   <tr>
     <td>{props.ParkingSpace.FirstName}</td>
     <td>{props.ParkingSpace.description}</td>
-    <td>{props.ParkingSpace.duration}</td>
+    <td>{props.ParkingSpace.size}</td>
+    <td>{props.ParkingSpace.price}</td>
     <td>{props.ParkingSpace.date.substring(0,10)}</td>
     <td>
       <Link to={"/edit/"+props.ParkingSpace._id}>edit</Link> | <a href="#" onClick={() => { props.deleteParkingSpace(props.ParkingSpace._id) }}>delete</a>
@@ -57,7 +58,8 @@ export default class ParkingSpacesList extends Component {
             <tr>
               <th>First Name</th>
               <th>Description</th>
-              <th>Duration</th>
+              <th>Size</th>
+              <th>Price</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>

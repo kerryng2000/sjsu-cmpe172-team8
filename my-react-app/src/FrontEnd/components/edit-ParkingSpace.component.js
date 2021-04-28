@@ -9,16 +9,17 @@ export default class EditParkingSpace extends Component {
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeDuration = this.onChangeDuration.bind(this);
+    this.onChangeSize= this.onChangeSize.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       FirstName: '',
       description: '',
-      duration: 0,
+      size: '',
+      price: 0,
       date: new Date(),
-      users: []
     }
   }
 
@@ -28,23 +29,12 @@ export default class EditParkingSpace extends Component {
         this.setState({
           FirstName: response.data.FirstName,
           description: response.data.description,
-          duration: response.data.duration,
+          size: response.data.size,
+          price: response.data.price,
           date: new Date(response.data.date)
         })   
       })
       .catch(function (error) {
-        console.log(error);
-      })
-
-    axios.get('http://localhost:5000/users/')
-      .then(response => {
-        if (response.data.length > 0) {
-          this.setState({
-            users: response.data.map(user => user.FirstName),
-          })
-        }
-      })
-      .catch((error) => {
         console.log(error);
       })
 
@@ -62,9 +52,15 @@ export default class EditParkingSpace extends Component {
     })
   }
 
-  onChangeDuration(e) {
+  onChangeSize(e) {
     this.setState({
-      duration: e.target.value
+      size: e.target.value
+    })
+  }
+
+  onChangePrice(e) {
+    this.setState({
+      price: e.target.value
     })
   }
 
@@ -80,7 +76,8 @@ export default class EditParkingSpace extends Component {
     const ParkingSpace = {
       FirstName: this.state.FirstName,
       description: this.state.description,
-      duration: this.state.duration,
+      size: this.state.size,
+      price: this.state.price,
       date: this.state.date
     }
 
@@ -99,20 +96,12 @@ export default class EditParkingSpace extends Component {
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
           <label>FirstName: </label>
-          <select ref="userInput"
+          <input  type="text"
               required
               className="form-control"
               value={this.state.FirstName}
-              onChange={this.onChangeFirstName}>
-              {
-                this.state.users.map(function(user) {
-                  return <option 
-                    key={user}
-                    value={user}>{user}
-                    </option>;
-                })
-              }
-          </select>
+              onChange={this.onChangeFirstName}
+              />
         </div>
         <div className="form-group"> 
           <label>Description: </label>
@@ -123,13 +112,22 @@ export default class EditParkingSpace extends Component {
               onChange={this.onChangeDescription}
               />
         </div>
+        <div className="form-group"> 
+          <label>Size: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.size}
+              onChange={this.onChangeSize}
+              />
+        </div>
         <div className="form-group">
-          <label>Duration (in minutes): </label>
+          <label>Price: </label>
           <input 
               type="text" 
               className="form-control"
-              value={this.state.duration}
-              onChange={this.onChangeDuration}
+              value={this.state.price}
+              onChange={this.onChangePrice}
               />
         </div>
         <div className="form-group">
@@ -143,7 +141,7 @@ export default class EditParkingSpace extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Edit ParkingSpace Log" className="btn btn-primary" />
+          <input type="submit" value="Edit Parking Space Log" className="btn btn-primary" />
         </div>
       </form>
     </div>

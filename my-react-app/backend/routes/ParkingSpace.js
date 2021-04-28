@@ -10,13 +10,15 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const FirstName = req.body.FirstName;
   const description = req.body.description;
-  const duration = Number(req.body.duration);
+  const size = req.body.size;
+  const price = Number(req.body.price);
   const date = Date.parse(req.body.date);
 
   const newParkingSpace = new ParkingSpace({
     FirstName,
     description,
-    duration,
+    size,
+    price,
     date,
   });
 
@@ -50,7 +52,8 @@ router.route('/update/:id').post((req, res) => {
     .then(ParkingSpace => {
       ParkingSpace.FirstName = req.body.FirstName;
       ParkingSpace.description = req.body.description;
-      ParkingSpace.duration = Number(req.body.duration);
+      ParkingSpace.size = req.body.size;
+      ParkingSpace.price = Number(req.body.price);
       ParkingSpace.date = Date.parse(req.body.date);
 
       ParkingSpace.save()

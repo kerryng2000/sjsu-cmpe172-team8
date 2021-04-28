@@ -9,14 +9,16 @@ export default class CreateParkingSpace extends Component {
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeDuration = this.onChangeDuration.bind(this);
+    this.onChangeSize = this.onChangeSize.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       FirstName: '',
       description: '',
-      duration: 0,
+      size: '',
+      price: 0,
       date: new Date(),
     }
   }
@@ -32,10 +34,16 @@ export default class CreateParkingSpace extends Component {
       description: e.target.value
     })
   }
-
-  onChangeDuration(e) {
+  
+  onChangeSize(e) {
     this.setState({
-      duration: e.target.value
+      size: e.target.value
+    })
+  }
+
+  onChangePrice(e) {
+    this.setState({
+      price: e.target.value
     })
   }
 
@@ -51,7 +59,8 @@ export default class CreateParkingSpace extends Component {
     const ParkingSpace = {
       FirstName: this.state.FirstName,
       description: this.state.description,
-      duration: this.state.duration,
+      size: this.state.size,
+      price: this.state.price,
       date: this.state.date
     }
 
@@ -86,13 +95,22 @@ export default class CreateParkingSpace extends Component {
               onChange={this.onChangeDescription}
               />
         </div>
+        <div className="form-group"> 
+          <label>Size: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.size}
+              onChange={this.onChangeSize}
+              />
+        </div>
         <div className="form-group">
-          <label>Duration (in minutes): </label>
+          <label>Price: </label>
           <input 
               type="text" 
               className="form-control"
-              value={this.state.duration}
-              onChange={this.onChangeDuration}
+              value={this.state.price}
+              onChange={this.onChangePrice}
               />
         </div>
         <div className="form-group">
