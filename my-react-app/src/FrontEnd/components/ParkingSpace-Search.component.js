@@ -24,7 +24,7 @@ export default class ParkingSpacesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/ParkingSpace')
+    axios.get('http://localhost:5000/ParkingSpace/search')
       .then(response => {
         this.setState({ ParkingSpaces: response.data })
       })
@@ -34,7 +34,7 @@ export default class ParkingSpacesList extends Component {
   }
 
   deleteParkingSpace(id) {
-    axios.delete('http://localhost:5000/ParkingSpace'+id)
+    axios.delete('http://localhost:5000/ParkingSpace/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -51,6 +51,12 @@ export default class ParkingSpacesList extends Component {
   render() {
     return (
       <div>
+          <h3>TESTING</h3>
+    <form action="/ParkingSpace/search" method="GET" class="boarder">
+    <h3>Search by Duration</h3>
+      <input type="number" name="duration" placeholder="Duration" />
+      <button type="submit">Submit</button>
+    </form>
         <h3>Logged Parking Spaces</h3>
         <table className="table">
           <thead className="thead-light">

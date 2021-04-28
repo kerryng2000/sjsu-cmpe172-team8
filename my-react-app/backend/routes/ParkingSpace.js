@@ -31,6 +31,13 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/search').get((req, res) => {
+  ParkingSpace.find()
+    .then(ParkingSpaces => res.json(ParkingSpaces))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 router.route('/:id').delete((req, res) => {
   ParkingSpace.findByIdAndDelete(req.params.id)
     .then(() => res.json('ParkingSpace deleted.'))
