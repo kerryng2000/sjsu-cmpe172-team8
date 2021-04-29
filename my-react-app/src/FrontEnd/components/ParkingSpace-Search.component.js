@@ -1,83 +1,94 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const ParkingSpace = props => (
-  <tr>
-    <td>{props.ParkingSpace.FirstName}</td>
-    <td>{props.ParkingSpace.description}</td>
-    <td>{props.ParkingSpace.duration}</td>
-    <td>{props.ParkingSpace.date.substring(0,10)}</td>
-    <td>
-      <Link to={"/edit/"+props.ParkingSpace._id}>edit</Link> | <a href="#" onClick={() => { props.deleteParkingSpace(props.ParkingSpace._id) }}>delete</a>
-    </td>
-  </tr>
-)
 
-export default class ParkingSpacesList extends Component {
-  constructor(props) {
-    super(props);
+export default class ParkingSpaceSearch extends Component {
+  constructor(data) {
+    super(data);
 
-    this.deleteParkingSpace = this.deleteParkingSpace.bind(this)
+    this.onChangeFirstName = this.onChangeFirstName.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeSize = this.onChangeSize.bind(this);
+    this.onChangePrice = this.onChangePrice.bind(this);
+    this.onChangeDate = this.onChangeDate.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
-    this.state = {ParkingSpaces: []};
-  }
-  state = { search: '' };
-  onSubmit = e => {
-    e.preventDefault();
-    this.context.router.push(`/ParkingSpace/search/${this.state.search}`);
-  };
-  onChange = e => this.setState({ search: e.target.value });
-
-  componentDidMount() {
-    axios.get('http://localhost:5000/ParkingSpace/')
-      .then(response => {
-        this.setState({ ParkingSpaces: response.data })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    this.state = {
+      FirstName: '',
+      description: '',
+      size: '',
+      price: 0,
+      date: new Date(),
+    }
   }
 
-  deleteParkingSpace(id) {
-    axios.delete('http://localhost:5000/ParkingSpace/'+id)
-      .then(response => { console.log(response.data)});
-
+  onChangeFirstName(e) {
     this.setState({
-      ParkingSpaces: this.state.ParkingSpaces.filter(el => el._id !== id)
+      FirstName: e.target.value
     })
   }
 
-  ParkingSpaceList() {
-    return this.state.ParkingSpaces.map(currentParkingSpace => {
-      return <ParkingSpace ParkingSpace={currentParkingSpace} deleteParkingSpace={this.deleteParkingSpace} key={currentParkingSpace._id}/>;
+  onChangeDescription(e) {
+    this.setState({
+      description: e.target.value
+    })
+  }
+  
+  onChangeSize(e) {
+    this.setState({
+      size: e.target.value
     })
   }
 
+  onChangePrice(e) {
+    this.setState({
+      price: e.target.value
+    })
+  }
+
+  onChangeDate(date) {
+    this.setState({
+      date: date
+    })
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+
+    const ParkingSpace = {
+      FirstName: this.state.FirstName,
+      description: this.state.description,
+      size: this.state.size,
+      price: this.state.price,
+      date: this.state.date
+    }
+
+    console.log(ParkingSpace.price);
+
+    axios.get('http://localhost:5000/ParkingSpace/search/' + ParkingSpace.price)
+      .then(res => console.log(res.data));
+    
+  }
+  
   render() {
     return (
       <div>
-          <h3>TESTING</h3>
-          <form onSubmit={this.onSubmit}>
-        <input onChange={this.onChange} value={this.state.search} />
-        <button type="submit">Search Parking Spots</button>
+      <h3>Search by Price</h3>
+      <form onSubmit={this.onSubmit}>
+      <div className="form-group">  
+          <label>Price: </label>
+          <input 
+              type="text" 
+              className="form-control"
+              value={this.state.price}
+              onChange={this.onChangePrice}
+              />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Create Parking Space" className="btn btn-primary" />
+        </div>
       </form>
-        <h3>Logged Parking Spaces</h3>
-        <table className="table">
-          <thead className="thead-light">
-            <tr>
-              <th>First Name</th>
-              <th>Description</th>
-              <th>Duration</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.ParkingSpaceList() }
-          </tbody>
-        </table>
-      </div>
+    </div>
     )
   }
 }

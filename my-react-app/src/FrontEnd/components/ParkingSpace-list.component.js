@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const ParkingSpace = props => (
+const ParkingSpace = data => (
   <tr>
-    <td>{props.ParkingSpace.FirstName}</td>
-    <td>{props.ParkingSpace.description}</td>
-    <td>{props.ParkingSpace.size}</td>
-    <td>{props.ParkingSpace.price}</td>
-    <td>{props.ParkingSpace.date.substring(0,10)}</td>
+    <td>{data.ParkingSpace.FirstName}</td>
+    <td>{data.ParkingSpace.description}</td>
+    <td>{data.ParkingSpace.size}</td>
+    <td>{data.ParkingSpace.price}</td>
+    <td>{data.ParkingSpace.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.ParkingSpace._id}>edit</Link> | <a href="#" onClick={() => { props.deleteParkingSpace(props.ParkingSpace._id) }}>delete</a>
+      <Link to={"/edit/"+data.ParkingSpace._id}>edit</Link> | <a href="#" onClick={() => { data.deleteParkingSpace(data.ParkingSpace._id) }}>delete</a>
     </td>
   </tr>
 )
 
 export default class ParkingSpacesList extends Component {
-  constructor(props) {
-    super(props);
+  constructor(data) {
+    super(data);
 
     this.deleteParkingSpace = this.deleteParkingSpace.bind(this)
 

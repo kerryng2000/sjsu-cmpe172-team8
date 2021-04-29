@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class CreateUser extends Component {
-  constructor(props) {
-    super(props);
+  constructor(data) {
+    super(data);
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeLastName = this.onChangeLastName.bind(this);

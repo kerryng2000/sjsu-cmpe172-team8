@@ -20,6 +20,7 @@ function App() {
       <Route path="/create" component={CreateParkingSpace} />
       <Route path="/user" component={CreateUser} />
       <Route path="/search" component={SearchBar} />
+      <Route path="/search/:id" component={SearchBar} />
       </div>
     </Router>
   );

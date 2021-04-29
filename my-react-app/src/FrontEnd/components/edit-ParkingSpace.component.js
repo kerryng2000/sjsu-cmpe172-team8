@@ -4,8 +4,8 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 export default class EditParkingSpace extends Component {
-  constructor(props) {
-    super(props);
+  constructor(data) {
+    super(data);
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -24,7 +24,7 @@ export default class EditParkingSpace extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/ParkingSpace/'+this.props.match.params.id)
+    axios.get('http://localhost:5000/ParkingSpace/'+this.data.match.params.id)
       .then(response => {
         this.setState({
           FirstName: response.data.FirstName,
@@ -83,7 +83,7 @@ export default class EditParkingSpace extends Component {
 
     console.log(ParkingSpace);
 
-    axios.post('http://localhost:5000/ParkingSpace/update/' + this.props.match.params.id, ParkingSpace)
+    axios.post('http://localhost:5000/ParkingSpace/update/' + this.data.match.params.id, ParkingSpace)
       .then(res => console.log(res.data));
 
     window.location = '/';

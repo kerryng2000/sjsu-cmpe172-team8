@@ -1,8 +1,6 @@
-const express = require('express');
+const express = require('express');  //Routing
 const cors = require('cors');
-const mongoose = require('mongoose');
-
-require('dotenv').config();
+const mongoose = require('mongoose'); //Allows for communication between Node.JS and MongoDB
 
 const app = express();
 const port = process.env.PORT || 5000;

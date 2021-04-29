@@ -33,9 +33,17 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/search').get((req, res) => {
+  console.log(req.params.id);
+  ParkingSpace.find({price: req.params.id})
+    .then(ParkingSpace => res.json(ParkingSpace))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/search/:id').get((req, res) => {
-  ParkingSpace.find()
-    .then(ParkingSpaces => res.json(ParkingSpaces))
+  console.log(req.params.id);
+  ParkingSpace.find({price: req.params.id})
+    .then(ParkingSpace => res.json(ParkingSpace))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
