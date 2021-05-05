@@ -36,7 +36,7 @@
 
 
 - Instructions on how to run the project locally.
-- To run the app, first cd to my-react-app. Enter command npm install. In a second terminal cd to my-react-app and then cd to backend, then enter the command npm install. Once the packages have finish installation, in the first terminal cd to src, then enter the command npm start and in the backend/2nd terminal also enter npm start. This will open up a browser which will display our application.
+- To run the app,  Enter command npm install. In a second terminal cd to backend, then enter the command npm install. Go in to each component in the src folder and change the web addresses to localhost:5000 to have the backend and frontend connect locally. Once the packages have finish installation, in the first terminal cd to src, then enter the command npm start and in the backend/2nd terminal also enter npm start. This will open up a browser which will display our application.
 
 
 
