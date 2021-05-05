@@ -25,7 +25,7 @@ export default class ParkingSpacesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/ParkingSpace')
+    axios.get('http://54.236.22.199:5000/ParkingSpace')
       .then(response => {
         this.setState({ ParkingSpaces: response.data })
       })
@@ -35,7 +35,7 @@ export default class ParkingSpacesList extends Component {
   }
 
   deleteParkingSpace(id) {
-    axios.delete('http://localhost:5000/ParkingSpace'+id)
+    axios.delete('http://54.236.22.199:5000/ParkingSpace'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

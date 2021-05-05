@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
-
-export default class ParkingSpaceSearch extends Component {
-  constructor(data) {
-    super(data);
+export default class CreateParkingSpace extends Component {
+  constructor(props) {
+    super(props);
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -63,19 +64,47 @@ export default class ParkingSpaceSearch extends Component {
       date: this.state.date
     }
 
-    console.log(ParkingSpace.price);
+    console.log(ParkingSpace);
 
-    axios.get('http://localhost:5000/ParkingSpace/search/' + ParkingSpace.price)
+    axios.post('http://54.236.22.199:5000/ParkingSpace/add', ParkingSpace)
       .then(res => console.log(res.data));
-    
+
+    window.location = '/';
   }
-  
+
   render() {
     return (
-      <div>
-      <h3>Search by Price</h3>
+    <div>
+      <h3>Create New Parking Space Listing</h3>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group">  
+      <div className="form-group"> 
+          <label>FirstName: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.FirstName}
+              onChange={this.onChangeFirstName}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Description: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.description}
+              onChange={this.onChangeDescription}
+              />
+        </div>
+        <div className="form-group"> 
+          <label>Size: </label>
+          <input  type="text"
+              required
+              className="form-control"
+              value={this.state.size}
+              onChange={this.onChangeSize}
+              />
+        </div>
+        <div className="form-group">
           <label>Price: </label>
           <input 
               type="text" 
@@ -84,6 +113,16 @@ export default class ParkingSpaceSearch extends Component {
               onChange={this.onChangePrice}
               />
         </div>
+        <div className="form-group">
+          <label>Date: </label>
+          <div>
+            <DatePicker
+              selected={this.state.date}
+              onChange={this.onChangeDate}
+            />
+          </div>
+        </div>
+
         <div className="form-group">
           <input type="submit" value="Create Parking Space" className="btn btn-primary" />
         </div>

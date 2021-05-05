@@ -3,13 +3,13 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
-export default class CreateParkingSpace extends Component {
-  constructor(props) {
-    super(props);
+export default class EditParkingSpace extends Component {
+  constructor(data) {
+    super(data);
 
     this.onChangeFirstName = this.onChangeFirstName.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onChangeSize = this.onChangeSize.bind(this);
+    this.onChangeSize= this.onChangeSize.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -23,6 +23,23 @@ export default class CreateParkingSpace extends Component {
     }
   }
 
+  componentDidMount() {
+    axios.get('http://54.236.22.199:5000/ParkingSpace/'+this.data.match.params.id)
+      .then(response => {
+        this.setState({
+          FirstName: response.data.FirstName,
+          description: response.data.description,
+          size: response.data.size,
+          price: response.data.price,
+          date: new Date(response.data.date)
+        })   
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
+  }
+
   onChangeFirstName(e) {
     this.setState({
       FirstName: e.target.value
@@ -34,7 +51,7 @@ export default class CreateParkingSpace extends Component {
       description: e.target.value
     })
   }
-  
+
   onChangeSize(e) {
     this.setState({
       size: e.target.value
@@ -66,7 +83,7 @@ export default class CreateParkingSpace extends Component {
 
     console.log(ParkingSpace);
 
-    axios.post('http://localhost:5000/ParkingSpace/add', ParkingSpace)
+    axios.post('http://54.236.22.199:5000/ParkingSpace/update/' + this.data.match.params.id, ParkingSpace)
       .then(res => console.log(res.data));
 
     window.location = '/';
@@ -75,9 +92,9 @@ export default class CreateParkingSpace extends Component {
   render() {
     return (
     <div>
-      <h3>Create New Parking Space Listing</h3>
+      <h3>Edit ParkingSpace Log</h3>
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+        <div className="form-group"> 
           <label>FirstName: </label>
           <input  type="text"
               required
@@ -124,7 +141,7 @@ export default class CreateParkingSpace extends Component {
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create Parking Space" className="btn btn-primary" />
+          <input type="submit" value="Edit Parking Space Log" className="btn btn-primary" />
         </div>
       </form>
     </div>

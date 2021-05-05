@@ -9,6 +9,7 @@ import CreateParkingSpace from "./components/create-ParkingSpace.component";
 import CreateUser from "./components/create-user.component";
 import SearchBar from "./components/ParkingSpace-Search.component";
 
+
 function App() {
   return (
     <Router>
