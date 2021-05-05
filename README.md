@@ -31,7 +31,7 @@
 - Folder structure as above
 
 
-![image](https://user-images.githubusercontent.com/33183687/116127660-f3b7da00-a67c-11eb-8ab5-f118e5dd924c.png)
+![image](https://user-images.githubusercontent.com/33183687/117088299-f06cc000-ad06-11eb-80bb-7ed5a2b78691.png)
 
 
 
