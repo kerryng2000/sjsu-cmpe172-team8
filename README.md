@@ -27,6 +27,8 @@
 - Deleting the Parking Spot Listing
 - ![image](https://user-images.githubusercontent.com/33183687/116125727-b6524d00-a67a-11eb-9e00-eccca1aeaead.png)
 - ![image](https://user-images.githubusercontent.com/33183687/116125747-bce0c480-a67a-11eb-8a37-1b3b44809574.png)
+- Search the parking spots
+![image](https://user-images.githubusercontent.com/33183687/117586853-a0f40e80-b0cf-11eb-9560-cb2fd23533cd.png)
 
 - Folder structure as above
 
