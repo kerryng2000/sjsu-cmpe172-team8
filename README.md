@@ -1,4 +1,12 @@
 # sjsu-cmpe172-team8
+
+
+# Link to the live website
+http://54.236.22.199/
+
+# Link to the github repository
+https://github.com/kerryng2000/sjsu-cmpe172-team8
+
 - University Name - SJSU
 
 
@@ -54,7 +62,5 @@
 
 ![image](https://user-images.githubusercontent.com/33183687/116130710-65ddee00-a680-11eb-80f1-896c5a81ec42.png)
 
-# Link to the live website
-http://54.236.22.199/
 
 
