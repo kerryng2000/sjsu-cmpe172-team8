@@ -50,13 +50,21 @@ http://54.236.22.199/
 
 - System Diagram, Class/Sequence/Db Schema from project Report
 
-
+## Class Diagram for our application
 
 ![image](https://user-images.githubusercontent.com/33183687/116129392-e7cd1780-a67e-11eb-9716-04260aeaa48d.png)
 
+## System Architecture for our application
+
 ![image](https://user-images.githubusercontent.com/33183687/116128566-ee0ec400-a67d-11eb-984f-37a62577c3d1.png)
 
-![image](https://user-images.githubusercontent.com/33183687/116128643-fff06700-a67d-11eb-8f48-f559e43447a4.png)
+## Sequence Diagram for our application
+
+![image](https://user-images.githubusercontent.com/33183687/117606754-690cbb80-b10f-11eb-88be-9804ce6b7ae4.png)
+
+![image](https://user-images.githubusercontent.com/33183687/117606769-70cc6000-b10f-11eb-976d-1788ccbc32e9.png)
+
+## The Database Schema for our application
 
 ![image](https://user-images.githubusercontent.com/33183687/116130710-65ddee00-a680-11eb-80f1-896c5a81ec42.png)
 
