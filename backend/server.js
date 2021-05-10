@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("my-react-app/build"));
 
-const uri = process.env.ATLAS_URI;
 mongoose
   .connect(
     "mongodb+srv://pow:pow@cluster0.higeu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
