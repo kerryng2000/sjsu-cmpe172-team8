@@ -66,7 +66,7 @@ http://54.236.22.199/
 
 ## The Database Schema for our application
 
-![image](https://user-images.githubusercontent.com/33183687/116130710-65ddee00-a680-11eb-80f1-896c5a81ec42.png)
+![image](https://user-images.githubusercontent.com/33183687/117608514-1503d600-b113-11eb-860c-0c4628b91e8d.png)
 
 
 
