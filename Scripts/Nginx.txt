@@ -1,3 +1,5 @@
+Anh, J. (Director). (2020, February 22). Deploy mern stack app with aws ec2 [Video file]. Retrieved May 10, 2021, from https://www.youtube.com/watch?v=HtWgb_vbyvY
+
 Nginx Configuration
 
 /etc/nginx/nginx.conf 
