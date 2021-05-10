@@ -22,21 +22,21 @@ http://54.236.22.199/
 
 
 
-- Creating Users
+## Creating Users
 - ![image](https://user-images.githubusercontent.com/33183687/116125434-565ba680-a67a-11eb-914b-8e9cea73e703.png)
-- Creating Parking Spots
+## Creating Parking Spots
 - ![image](https://user-images.githubusercontent.com/33183687/116125509-6e332a80-a67a-11eb-846d-3be47c431855.png)
-- Displaying the Parking Spots
+## Displaying the Parking Spots
 - ![image](https://user-images.githubusercontent.com/33183687/116125628-9753bb00-a67a-11eb-9e47-7afaf4ea0e2f.png)
-- Editing the Parking Spot Listing
+## Editing the Parking Spot Listing
 - ![image](https://user-images.githubusercontent.com/33183687/116125682-a8043100-a67a-11eb-83cf-a33e7f68f8f4.png)
-- Deleting the Parking Spot Listing
+## Deleting the Parking Spot Listing
 - ![image](https://user-images.githubusercontent.com/33183687/116125727-b6524d00-a67a-11eb-9e00-eccca1aeaead.png)
 - ![image](https://user-images.githubusercontent.com/33183687/116125747-bce0c480-a67a-11eb-8a37-1b3b44809574.png)
-- Search the parking spots
+## Search the parking spots
 ![image](https://user-images.githubusercontent.com/33183687/117586853-a0f40e80-b0cf-11eb-9560-cb2fd23533cd.png)
 
-- Folder structure as above
+## Folder structure for our application
 
 
 ![image](https://user-images.githubusercontent.com/33183687/117088299-f06cc000-ad06-11eb-80bb-7ed5a2b78691.png)
