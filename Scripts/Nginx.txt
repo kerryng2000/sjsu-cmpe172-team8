@@ -46,7 +46,7 @@ server {
     #listen​       80;
     listen 80 default_server;
     listen [::]:80 default_server;
-    server_name  yourdomain.com;
+    server_name ;
 
     access_log /home/ubuntu/client/server_logs/host.access.log main;
 
