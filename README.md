@@ -52,7 +52,7 @@ http://54.236.22.199/
 
 ## Class Diagram for our application
 
-![image](https://user-images.githubusercontent.com/33183687/116129392-e7cd1780-a67e-11eb-9716-04260aeaa48d.png)
+![image](https://user-images.githubusercontent.com/33183687/117607889-c99cf800-b111-11eb-9738-2783435a2cc5.png)
 
 ## System Architecture for our application
 
