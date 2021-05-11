@@ -56,6 +56,8 @@ http://54.236.22.199/
 
 ## System Architecture for our application
 
+![image](https://user-images.githubusercontent.com/33183687/117746188-d75d8680-b1c0-11eb-8d11-e88d696fedef.png)
+
 ![image](https://user-images.githubusercontent.com/33183687/116128566-ee0ec400-a67d-11eb-984f-37a62577c3d1.png)
 
 ## Sequence Diagram for our application
